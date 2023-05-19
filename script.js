@@ -1,30 +1,40 @@
-/*snack 1*/
+/*Generare numero casuale tra 1 e 100 COMPRESI.*/
 
-/*1.Crea un array vuoto e chiedi all'utente un numero da inserire nell'array. */
+let casualNumber= Math.floor(Math.random()*100) +1;
 
-let numberArray=[];
+console.log(casualNumber);
 
-let sum=0;
-
-let minore=false;
-let input=document.querySelector('input');
-let button=document.querySelector('button');
+let i=prompt('Guess number from 0 to 100');
 
 
-/*2. Continua a chiedere i numeri all'utente e a inserirli nell'array fino a quando la somma degli elementi è minore di 50.*/
+/*Continuare a chiedere all'utente di indovinare il numero fino a quando non lo indovina.*/
 
-while(sum < 50) {
+while(i!= casualNumber){
+    i=prompt('Try again!');
+    console.log(i);
 
-    let i=parseInt(prompt('Insert a number'));
-    sum= parseInt(sum + i);
-    numberArray.push(i);
-    console.log(numberArray);
+    if(i<casualNumber){
 
-    if(sum>50){
-        minore=true;
+        console.log('Your number is lower');
+        console.log(i);
         i++;
-    };
+    }
+    else if(i>casualNumber){
 
-};
+        console.log('Your number is higher');
+        console.log(i);
+        i++;
+    }
+}
+
+if(i=casualNumber){
+    console.log(i);
+    console.log('Congrats!');
+    alert("Congratulation! You won the game");
+}
 
 
+
+
+
+/*Una volta che ha indovinato, stampiamo in console il numero di tentativi totali.*/
